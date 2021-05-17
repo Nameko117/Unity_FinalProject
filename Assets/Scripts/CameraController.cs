@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         offset = transform.position - ball.transform.position;
+        ball = GameObject.FindGameObjectWithTag("Ball");
     }
 
     // Update is called once per frame
