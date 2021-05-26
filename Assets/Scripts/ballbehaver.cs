@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 using UnityEngine.InputSystem;
 
 public class ballbehaver : MonoBehaviour
 {
     public float speed = 1.0f;
     private Rigidbody rb;
-    private float moveX;
-    private float moveY;
+    private float moveX, moveY;
+    public Vector3 startPosition;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        startPosition = transform.position;
     }
     private void OnMove(InputValue inputValue)
     {
@@ -46,4 +46,28 @@ public class ballbehaver : MonoBehaviour
             Debug.Log("right");
         }
     }*/
+    void OnTriggerEnter(Collider other)
+    {
+        switch(other.tag)
+        {
+            case "Fail":
+            {
+                ResetPosition();
+                break;
+            }
+            case "CheckPoint":
+            {
+                startPosition = other.transform.position + new Vector3(0,2,0);
+                break;
+            }
+        }
+    }
+
+    public void ResetPosition()
+    {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.MovePosition(startPosition);
+        transform.rotation = new Quaternion();
+    }
 }
