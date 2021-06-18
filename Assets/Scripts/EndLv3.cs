@@ -23,6 +23,6 @@ public class EndLv3 : MonoBehaviour
     IEnumerator Countdown()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Lv4");
     }
 }
