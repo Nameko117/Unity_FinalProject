@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class ballbehaver : MonoBehaviour
-{
-    public float speed = 1.0f;
+{   
+    public Transform ball;
+    public float turnspeed = 10.0f; 
+    public float speed = 1.0f;  
     private Rigidbody rb;
-    private float moveX, moveY;
+    private float moveX, moveY,moveZ;
     public Vector3 startPosition;
     Collider selfCollider;
     public Material[] material;
@@ -33,11 +35,21 @@ public class ballbehaver : MonoBehaviour
         moveX = movevector.x;
         moveY = movevector.y;
     }
+    // private void OnLook(InputValue inputValue)
+    // {
+    //     Vector2 Tmovevector = inputValue.Get<Vector2>();
+    //     moveZ = Tmovevector.y;
+    
+    // }
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(moveX, 0.0f, moveY);
         rb.AddForce(movement*speed);
     }
+    // private void Update()
+    // {
+    //     StartCoroutine(turn());
+    // }
     // Update is called once per frame
     /*void Update()
     {
@@ -112,4 +124,12 @@ public class ballbehaver : MonoBehaviour
         }
 
     }
+    //  IEnumerator turn()
+    //  {
+        
+    //      Vector3 Tmove =  Vector3.up * moveZ*100 ;
+    //      ball.Rotate(Tmove * turnspeed * Time.deltaTime, Space.World);
+
+    //      yield return null;
+    //  }    
 }
