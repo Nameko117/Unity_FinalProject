@@ -23,8 +23,8 @@ public class EndLv4 : MonoBehaviour
     }
     IEnumerator Countdown()
     {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("SampleScene");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("START");
     }
 
 }
