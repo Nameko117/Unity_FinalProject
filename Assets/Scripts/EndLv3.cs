@@ -8,6 +8,7 @@ public class EndLv3 : MonoBehaviour
     void Start()
     {
         select.LvOpen[2] = true;
+        select.ResetSave();
     }
 
     // Update is called once per frame

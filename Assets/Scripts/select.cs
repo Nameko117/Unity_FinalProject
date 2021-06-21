@@ -10,6 +10,15 @@ public class select : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(PlayerPrefs.HasKey("Save")) {
+            string t = PlayerPrefs.GetString("Save");
+            for(int i=0;i<4;i++) LvOpen[i] = t[i]=='1';
+        }
+        else {
+            string t = "";
+            for(int i=0;i<4;i++) t += LvOpen[i]?'1':'0';
+            PlayerPrefs.SetString("Save", t);
+        }
         GameObject[] LvButton = GameObject.FindGameObjectsWithTag("LvButton");
         for(int i=0;i<4;i++) LvButton[i].GetComponent<Button>().interactable = LvOpen[i];
     }
@@ -18,6 +27,12 @@ public class select : MonoBehaviour
     void Update()
     {
         
+    }
+    public static void ResetSave()
+    {
+        string t = "";
+        for(int i=0;i<4;i++) t += LvOpen[i]?'1':'0';
+        PlayerPrefs.SetString("Save", t);
     }
     public void Lv1ButtonClick()
     {       
