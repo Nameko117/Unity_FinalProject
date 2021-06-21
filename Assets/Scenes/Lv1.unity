@@ -301,6 +301,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7118555117416257858, guid: df7adbb3dece52646a798b443e1bb9aa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb1e1f7540cc4a0469b0148d15597a73, type: 2}
     - target: {fileID: 7118555117416257863, guid: df7adbb3dece52646a798b443e1bb9aa, type: 3}
       propertyPath: m_Name
       value: Sphere
@@ -914,7 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86698dc063e4be74e8415369add792d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1358482601}
+  cam: {fileID: 0}
   turnspeed: 10
   ball: {fileID: 1905691997}
 --- !u!4 &1358482601

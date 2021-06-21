@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndLv4 : MonoBehaviour
+public class end : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        select.LvOpen[3] = true;
+        
     }
 
     // Update is called once per frame
@@ -16,15 +16,8 @@ public class EndLv4 : MonoBehaviour
     {
         
     }
-    void OnCollisionExit(Collision other)
-    {
-        StartCoroutine(Countdown());
-
+    public void BackTitle()
+    {       
+        SceneManager.LoadScene(0);
     }
-    IEnumerator Countdown()
-    {
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("END");
-    }
-
 }
