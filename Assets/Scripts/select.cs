@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class select : MonoBehaviour
 {
+    public static bool[]  LvOpen = {true, false, false, false};
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject[] LvButton = GameObject.FindGameObjectsWithTag("LvButton");
+        for(int i=0;i<4;i++) LvButton[i].GetComponent<Button>().interactable = LvOpen[i];
     }
 
     // Update is called once per frame
@@ -32,5 +34,9 @@ public class select : MonoBehaviour
     public void Lv4ButtonClick()
     {       
         SceneManager.LoadScene(5);
+    }
+    public void BackTitle()
+    {       
+        SceneManager.LoadScene(0);
     }
 }

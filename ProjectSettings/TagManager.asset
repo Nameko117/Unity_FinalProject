@@ -8,6 +8,7 @@ TagManager:
   - Fail
   - CheckPoint
   - ChangePoint
+  - LvButton
   layers:
   - Default
   - TransparentFX

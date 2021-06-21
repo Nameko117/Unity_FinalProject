@@ -7,7 +7,7 @@ public class EndLv3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        select.LvOpen[2] = true;
     }
 
     // Update is called once per frame
